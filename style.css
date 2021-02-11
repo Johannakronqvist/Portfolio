@@ -1,0 +1,340 @@
+:root {
+    --dark:#020514;
+    --light:#ABABB5;
+    --box:#183058;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+}
+
+/*header start*/
+header {
+    display: flex;
+    align-items: baseline;
+    height: 40vh;
+    color: var(--light);
+    margin: 1rem;
+}
+
+.header-container {
+    margin: 0 auto 0 1rem;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    border-bottom: solid 1px var(--light);
+    padding-right: 2rem;
+}
+
+ nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    font-size: 1.4rem;
+    }
+
+nav ul a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--light);
+    padding: 0 0.5rem;
+    }
+
+nav ul a:hover {
+    background-color: var(--light);
+    color: var(--dark);
+    border-radius: 3%;
+}
+/*Header end*/
+
+/*Main start*/
+main {
+    margin: 5rem ;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 30vw) ;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+    grid-template-areas: 
+    "about me"
+    "about skills"
+    "coding projects"
+    "coding projects"
+    "contact projects"
+    "contact forest"
+    ;
+}
+
+.grid-container .articles {
+    line-height: 1.5;
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--box);
+    border-radius: 1%;
+    box-shadow: 5px 5px 8px rgb(0, 0, 3);
+    padding: 20px;
+}
+
+/*About*/
+#about {
+    grid-area: about; 
+}
+
+#about .about-article {
+    padding: 5%;
+   
+}
+
+.about-article ul {
+    list-style: square;
+}
+
+#who-am-i, #education{
+    border-bottom: 1px solid var(--light);
+}
+
+/*Photo*/
+.me {
+    grid-area: me;
+}
+
+main .forest, .me, .coding {
+    width: 100%;
+    border-radius: 1%;
+    box-shadow: 5px 5px 8px rgb(32, 33, 36);
+    box-shadow: 5px 5px 8px rgb(0, 0, 3);
+}
+
+
+/*Skills*/
+#skills {
+    grid-area: skills;
+    font-size: 1.5vw;
+}
+
+#skills h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 10%;
+}
+
+.skills-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-container .fab {
+    font-size: 11vw;
+    color: var(--light);
+}
+
+/*Photo*/
+.coding {
+    grid-area: coding;
+}
+
+/*Projects*/
+#projects {
+    grid-area: projects;
+}
+
+#projects h3 {
+    padding: 5%;
+}
+
+#projects img {
+    max-width: 18vw;
+    border-radius: 100%;
+    padding: 5%;
+}
+
+#projects img:hover {
+    animation-name: imganimation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes imganimation {
+    100% {border-radius: 10%;}
+}
+
+/*Contact form*/
+#contact {
+    grid-area: contact;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#contact button {
+    margin: 20px 0;
+    width: 30%;
+    border-radius: 3%;
+    border: none;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.social-media-container .fab{
+    font-size: 4vw;
+    margin: 0;
+    padding: 0 1vw;
+    color: var(--light);
+}
+
+.social-media-container .fab:hover {
+    color: var(--dark);
+}
+
+.forest {
+    grid-area: forest;
+}
+
+footer {
+    height: 30vh;
+    margin: 1rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+/*Media queries*/
+@media only screen and (max-width: 850px) {
+    header {
+        height: 20vh;
+    }
+    
+    .header-container {
+        font-size: 0.7rem;
+    }
+    
+     nav ul {
+        font-size: 1rem;
+        }
+    
+    nav ul a {
+        margin: 0 0.5rem;
+        }
+
+    .grid-container {
+    display: grid;
+    grid-template-columns: 38vw 38vw ;
+    grid-template-rows: repeat(30vh, 6);
+    grid-gap: 1.5rem;
+    }
+
+    .grid-container .articles {
+        font-size: 2.4vw;
+        padding: 15px;
+    }
+
+    #skills{
+        font-size: 2.4vw;
+    }
+
+    .skills-container .fab {
+        font-size: 16vw;
+    }
+
+    #projects img {
+        max-width: 22vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        height: 30vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, aut0);
+        grid-template-areas: 
+        "nav"
+        "h1"
+        ;
+    }
+    
+    .header-container {
+        grid-area: h1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    h1 {
+        padding: 0 1rem;
+    }
+
+    header nav ul{
+        grid-area: nav;
+        display: flex;
+        justify-content: space-evenly;
+        }
+    
+    nav ul a {
+        margin: 1rem ;
+        }
+
+    .grid-container {
+        max-width: 100vw;
+        grid-template-columns: 85vw ;
+        grid-template-rows: repeat (auto, 6);
+        grid-gap: 2rem;
+        grid-template-areas: 
+        "about"
+        "me"
+        "skills"
+        "coding"
+        "projects"
+        "contact"
+        "forest"
+        ;
+    }
+
+    .grid-container .articles {
+        font-size: 1.2rem;
+    }
+
+    #skills{
+        font-size: 1.2rem;
+    }
+
+    .skills-container .fab {
+        font-size: 28vw;
+    }
+
+    #projects img {
+        max-width: 40vw;
+    }
+
+    
+.social-media-container .fab{
+    font-size: 8vw;
+}
+}
+
